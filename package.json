@@ -1,0 +1,16 @@
+{
+  "name": "simple-hubspot-app",
+  "version": "1.0.0",
+  "description": "A simple HubSpot app built with Node.js and Express.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "jrafcrzw",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0"
+  }
+}
