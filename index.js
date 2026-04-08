@@ -6,18 +6,19 @@ const app = express();
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-app.get('/', async (req, res) => {
-    const companies = 'https://api.hubspot.com/crm/v3/objects/contacts';
-    const headers = {
-        Authorization: `Bearer ${ACCESS_TOKEN}`,
-        'Content-Type': 'application/json'
-    }
-    try {
-        const response = await axios.get(companies, { headers });
-        res.json(response.data.results);    
-    } catch (error) {
-        console.error(error);
-    }
+app.get("/contacts", async (req, res) => {
+  const contacts = "https://api.hubspot.com/crm/v3/objects/contacts";
+  const headers = {
+    Authorization: `Bearer ${ACCESS_TOKEN}`,
+    "Content-Type": "application/json",
+  };
+  try {
+    const response = await axios.get(contacts, { headers });
+    const contactsData = response.data.results;
+    res.json(contactsData);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.listen(3000, () => {
